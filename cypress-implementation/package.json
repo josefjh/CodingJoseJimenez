@@ -1,0 +1,19 @@
+{
+  "name": "cypress-implementation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^20.0.1",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
+    "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
+    "cypress": "^13.6.2",
+    "cypress-mochawesome-reporter": "^3.8.0",
+    "cypress-plugin-api": "^2.11.1"
+  }
+}
