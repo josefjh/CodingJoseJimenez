@@ -1,4 +1,3 @@
 node_modules
-results
-reports
 cucumber-messages.ndjson
+cypress/fixtures/data-pokeapi/poke-info.json

@@ -13,12 +13,12 @@
     "@bahmutov/cypress-esbuild-preprocessor": "^2.2.0",
     "@esbuild-plugins/node-modules-polyfill": "^0.2.2",
     "cypress": "^12.9.0",
-    "cypress-mochawesome-reporter": "^3.8.0",
-    "cypress-plugin-api": "^2.11.1"
+    "cypress-mochawesome-reporter": "^3.8.0"
   },
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^16.0.3",
     "@cypress/webpack-preprocessor": "^6.0.1",
+    "cypress-plugin-api": "^2.11.1",
     "webpack": "^5.89.0"
   },
   "cypress-cucumber-preprocessor": {

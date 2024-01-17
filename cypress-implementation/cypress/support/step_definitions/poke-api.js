@@ -3,7 +3,10 @@
 import{Given, When, Then} from '@badeball/cypress-cucumber-preprocessor'
 
 // Declaración de variables iniciales para api-interop
-var variable = 0  
+var variable = 0 
+var sub_body = 0
+var field =0
+var word =0
 
 // SECCIÓN GIVEN
 
@@ -62,6 +65,7 @@ When('Ejecuto la consulta al endpoint',()=>{
                 'weight'
             )
         })
+        //if(field=='id') parseInt(word),
         cy.get('@response').its('body.'+field).should('eq',word)
     })
 

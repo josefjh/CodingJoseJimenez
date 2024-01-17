@@ -1,0 +1,20 @@
+[
+    {
+        "id": 0,
+        "data_type": "Pokemon de Generacion 1. Arcanine",
+        "data": "arcanine",
+        "numero": "59"
+    },
+    {
+        "id": 1,
+        "data_type": "Pokemon de Generacion 2. Typhlosion",
+        "name": "typhlosion",
+        "data": "157"
+    },
+    {
+        "id": 2,
+        "data_type": "Pokemon de Generacion 3 errado. Raiquaza",
+        "data": "raiquaza",
+        "numero":"2000"
+    }
+]
