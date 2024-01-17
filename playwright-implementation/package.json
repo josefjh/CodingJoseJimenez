@@ -4,7 +4,7 @@
   "description": "Playwright testing sector",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test":"./node_modules/.bin/cucumber-js --require cucumber/js --require step-definitions/**/*.js -f json:cucumber_report.json --publish-quiet"
   },
   "author": "Jose F Jimenez H",
   "license": "ISC",
