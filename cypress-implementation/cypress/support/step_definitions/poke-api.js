@@ -4,9 +4,7 @@ import{Given, When, Then} from '@badeball/cypress-cucumber-preprocessor'
 
 // Declaración de variables iniciales para api-interop
 var variable = 0 
-var sub_body = 0
-var field =0
-var word =0
+
 
 // SECCIÓN GIVEN
 
@@ -22,8 +20,11 @@ Given('La búsqueda la realizo por {string}',(metodo)=>{
     else if(metodo=='nombre'){
         variable=1;
     }
-    else if(metodo=='nombre-errado'|| metodo=='numero-errado'){
+    else if(metodo=='nombre-errado'){
         variable=2;
+    }
+    else if(metodo=='numero-errado'){
+        variable=3;
     }
 })
 
@@ -65,23 +66,17 @@ When('Ejecuto la consulta al endpoint',()=>{
                 'weight'
             )
         })
-        //if(field=='id') parseInt(word),
+        //if(field=='id'){word.parseInt()}
         cy.get('@response').its('body.'+field).should('eq',word)
     })
 
         // Utilizado para verificar el tipo y la habilidad
     Then('Confirmo que su {string} es {string}',(a,b)=>{
         if (a=='tipo'){
-            sub_body=types
-            field='type'
-        }
+            cy.get('@response').its('body.types[0].type.name').should('eq',b)
+            }
         else if (b=='habilidad'){
-            sub_body=abilities
-            field='ability'
-        }
-        cy.get('@response').then( data=>{
-            expect(data.body.sub_body).to.include.keys('0')
+            cy.get('@response').its('body.abilities[0].ability.name').should('eq',b)
+            }
         })
-        cy.get('@response').its('body.'+sub_body+'.0'+field+'.name').should('eq',word)
-    })
 

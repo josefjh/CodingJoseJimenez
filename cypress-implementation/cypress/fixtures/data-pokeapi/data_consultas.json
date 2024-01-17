@@ -16,5 +16,11 @@
         "data_type": "Pokemon de Generacion 3 errado. Raiquaza",
         "data": "raiquaza",
         "numero":"2000"
+    },
+    {
+        "id": 3,
+        "data_type": "Pokemon de Generacion 3 errado. Raiquaza",
+        "nombre": "raiquaza",
+        "data":"2000"
     }
 ]
