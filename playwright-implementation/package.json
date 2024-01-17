@@ -1,0 +1,19 @@
+{
+  "name": "playwright-implementation",
+  "version": "1.0.0",
+  "description": "Playwright testing sector",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jose F Jimenez H",
+  "license": "ISC",
+  "dependencies": {
+    "@cucumber/cucumber": "^10.3.1",
+    "@playwright/test": "^1.41.0",
+    "chai": "^5.0.0",
+    "cucumber-html-reporter": "^7.1.1",
+    "playwright": "^1.41.0",
+    "prettier": "^3.2.4"
+  }
+}
