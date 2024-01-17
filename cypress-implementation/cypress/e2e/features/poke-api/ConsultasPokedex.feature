@@ -1,16 +1,33 @@
-Feature: 
+Feature: Pokemon
 
-    Scenario: asdsadsad
-    Given asdsad
-    When asdasdsad
-    Then asasdsad
+    Scenario: Consulta Exitosa 
+    Given Quiero consultar la información para un pokémon
+    And La búsqueda la realizo por "nombre"
+    When Ejecuto la consulta al endpoint
+    Then Obtengo un Status code "200"
+    And Confirmo que el "name" es "typhlosion"
+    And Confirmo que el "id" es "157"
+    And Confirmo que su "tipo" es "fire"
+    And Confirmo que su "habilidad" es "blaze"
 
-#Feature: Funcionalidad Consultas Consultas del InterbankInfo
-    #Realizar las pruebas asociadas al endpoint de interbankInfo
+    #Scenario: Consulta Exitosa #1 de Pokémon por su número
+    #Given Quiero consultar la información para un pokémon
+    #And La búsqueda la realizo por "id"
+    #When Ejecuto la consulta al endpoint
+    #Then Obtengo un Status code "200"
+    #And Confirmo que el "name" es "arcanine"
+    #And Confirmo que el "id" es "59"
+    #And Confirmo que su "tipo" es "fire"
+    #And Confirmo que su "habilidad" es "intimidate"
 
-    #Scenario: Consulta por CCI - Cuenta Banco Falabella Valida
-        #Given Se necesita confirmar que la cuenta "On Us" es válida para transferir
-        #When Ejecuto el POST al interbank-info de "api-interop" por "CCI"
-        #Then Obtengo un Status code "200"
-        #And Obtengo el campo "message" con valor "TRANSACCION OK"
-        #And Obtengo el campo de "responseCode" con valor "00"
+    #Scenario: Consulta Fallida de Pokémon por nombre errado
+    #Given Quiero consultar la información para un pokémon
+    #And La búsqueda la realizo por "nombre-errado"
+    #When Ejecuto la consulta al endpoint
+    #Then Obtengo un Status code "400"
+
+    #Scenario: Consulta Fallida de Pokémon por número errado
+    #Given Quiero consultar la información para un pokémon
+    #And La búsqueda la realizo por "numero-errado"
+    #When Ejecuto la consulta al endpoint
+    #Then Obtengo un Status code "400"

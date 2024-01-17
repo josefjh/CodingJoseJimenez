@@ -15,7 +15,8 @@
 
 // Import commands.js using ES2015 syntax:
 import './commands'
-import './poke-api'
+import './poke-api/poke-api'
+//import './commons'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

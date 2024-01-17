@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+
 import{Given, When, Then} from '@badeball/cypress-cucumber-preprocessor'
 
 // Declaración de variables iniciales para api-interop
@@ -8,23 +9,28 @@ var variable = 0
 
     // Corresponde a carga de datos para búsqueda de pokémons
 Given('Quiero consultar la información para un pokémon',()=>{
-    cy.fixture(`data-pokeapi/data_consultas.json`).then(data =>{this.info = data})
+    cy.fixture(`data-pokeapi/data_consultas.json`).then(get_data => { this.data = get_data })
 })
 
-Given('La búsqueda la realizo con un pokémon ya de consulta típica',()=>{
-        arr = [0,1,2,3,4,5,6,7,8,9];
-        randomIndex = Math.floor(Math.random() * arr.length);
-        seleccion = arr[randomIndex];
-        variable = eleccion
+Given('La búsqueda la realizo por {string}',(metodo)=>{
+    if(metodo=='id'){
+        variable=0;
+    }
+    else if(metodo=='nombre'){
+        variable=1;
+    }
+    else if(metodo=='nombre-errado'|| metodo=='numero-errado'){
+        variable=2;
+    }
 })
 
 
 // SECCIÓN WHEN
 
     // Corresponde a la consulta a la API
-When('Ejecuto la pegada al endpoint',()=>{
-    cy.pokeConsulta(data[variable]).as('response')
-   // cy.get('@response').then(res=>{cy.writeFile('cypress/fixtures/test-data/interoperabilidad/interbank.json',res.body)})
+When('Ejecuto la consulta al endpoint',()=>{
+    cy.pokeConsulta(this.data[variable]).as('response')
+    cy.get('@response').then(res=>{cy.writeFile('cypress/fixtures/data-pokeapi/poke-info.json',res.body)})
 })
 
 
@@ -70,10 +76,8 @@ When('Ejecuto la pegada al endpoint',()=>{
             field='ability'
         }
         cy.get('@response').then( data=>{
-            expect(data.body.sub_body).to.include.keys(
-                '0'
-        )
-    })
-    cy.get('@response').its('body.'+sub_body+'.0'+field+'.name').should('eq',word)
+            expect(data.body.sub_body).to.include.keys('0')
+        })
+        cy.get('@response').its('body.'+sub_body+'.0'+field+'.name').should('eq',word)
     })
 
